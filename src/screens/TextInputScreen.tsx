@@ -1,5 +1,5 @@
 import { View, TextInput, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Text } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 import HeaderTitle from '../components/HeaderTitle';
 import { styles } from '../theme/appTheme';
 import { ScrollView } from 'react-native-gesture-handler';

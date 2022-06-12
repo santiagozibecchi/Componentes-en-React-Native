@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface Props {
      title: string,
-     color?: string
+     color?: string,
 }
 
 const HeaderTitle = ({ title, color = 'black' }: Props) => {
@@ -14,7 +14,7 @@ const HeaderTitle = ({ title, color = 'black' }: Props) => {
      const { top } = useSafeAreaInsets();
 
      return (
-          <View style={{ marginTop: top + 20, marginBottom: 20 }}>
+          <View style={{ marginTop: top + 20, marginBottom: 15 }}>
                <Text style={{
                     ...styles.title,
                     color,
