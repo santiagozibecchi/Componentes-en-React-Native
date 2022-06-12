@@ -29,7 +29,7 @@ const FlatListMenuItems = ({ menuItem }: Props) => {
 
                     <Icon
                          name={menuItem.icon}
-                         color="grey"
+                         color="#5856D6"
                          size={22}
                     />
 
@@ -42,7 +42,7 @@ const FlatListMenuItems = ({ menuItem }: Props) => {
 
                     <Icon
                          name="chevron-forward-outline"
-                         color="grey"
+                         color="#5856D6"
                          size={22}
                     />
 
