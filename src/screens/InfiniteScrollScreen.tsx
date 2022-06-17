@@ -1,6 +1,7 @@
 import { View, StyleSheet, Image, FlatList, ActivityIndicatorComponent, ActivityIndicator } from 'react-native';
 import React, { useState } from 'react';
 import HeaderTitle from '../components/HeaderTitle';
+import FadeInImage from '../components/FadeInImage';
 
 const InfiniteScrollScreen = () => {
 
@@ -19,25 +20,37 @@ const InfiniteScrollScreen = () => {
 
      const renderItem = (item: number) => {
           return (
-               <Image
-                    source={{ uri: `https://picsum.photos/id/${item}/400/300` }}
+               <FadeInImage
+                    uri={`https://picsum.photos/id/${item}/400/300`}
                     style={{
                          width: '100%',
                          height: 300,
                     }}
                />
           );
+
+          // <Image
+          //      source={{ uri: `https://picsum.photos/id/${item}/400/300` }}
+          //      style={{
+          //           width: '100%',
+          //           height: 300,
+          //      }}
+          // />
      };
 
      return (
-          <View style={{ flex: 1, backgroundColor: 'red' }}>
+          <View style={{ flex: 1 }}>
 
                <FlatList
                     data={numbers}
                     keyExtractor={(item) => item.toString()}
                     renderItem={({ item }) => renderItem(item)}
 
-                    ListHeaderComponent={<HeaderTitle title="Infite Scroll" />}
+                    ListHeaderComponent={() => (
+                         <View style={{ alignItems: 'center' }}>
+                              <HeaderTitle title="Infite Scroll" />
+                         </View>
+                    )}
 
                     // cuando estoy en el final
                     onEndReached={loadMore}
@@ -47,7 +60,7 @@ const InfiniteScrollScreen = () => {
 
                     ListFooterComponent={() => (
                          <View style={{
-                              height: 60,
+                              height: 150,
                               width: '100%',
                               justifyContent: 'center',
                               alignItems: 'center',
