@@ -21,8 +21,8 @@ const CustomSwitch = ({ isOn, onChange }: Props) => {
 
      return (
           <Switch
-               trackColor={{ false: "#D9D9D9", true: "#9595e5" }}
-               thumbColor={(Platform.OS === 'android') ? colors.card : ''}
+               trackColor={{ false: "#D9D9D9", true: colors.primary }}
+               thumbColor={(Platform.OS === 'android') ? colors.primary : ''}
                // ios_backgroundColor="#3e3e3e"
                onValueChange={toggleSwitch}
                value={isEnabled}
