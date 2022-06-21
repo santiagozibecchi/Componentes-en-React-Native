@@ -46,5 +46,15 @@ export const menuItems: MenuItem[] = [
           icon: 'swap-vertical-outline',
           component: 'InfiniteScrollScreen',
      },
+     {
+          name: 'Slides',
+          icon: 'book-outline',
+          component: 'SlidesScreen',
+     },
+     {
+          name: 'Themes',
+          icon: 'brush-outline',
+          component: 'ChangeThemeScreen',
+     },
 ];
 

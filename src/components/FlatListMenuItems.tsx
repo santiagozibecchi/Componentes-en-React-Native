@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { MenuItem } from '../interfaces/appInterfaces';
 import { CommonActions, useNavigation } from '@react-navigation/native';
+
+import { ThemeContext } from '../context/themeContext/ThemeContext';
+import { MenuItem } from '../interfaces/appInterfaces';
 
 interface Props {
      menuItem: MenuItem,
@@ -12,7 +14,7 @@ interface Props {
 const FlatListMenuItems = ({ menuItem }: Props) => {
 
      const navigation = useNavigation();
-
+     const { theme: { colors } } = useContext(ThemeContext);
 
      return (
 
@@ -29,20 +31,25 @@ const FlatListMenuItems = ({ menuItem }: Props) => {
 
                     <Icon
                          name={menuItem.icon}
-                         color="#5856D6"
+                         color={colors.primary}
                          size={22}
                     />
 
-                    <Text style={styles.itemText}>
+                    <Text style={{
+                         ...styles.itemText,
+                         color: colors.text,
+                    }}>
                          {menuItem.name}
                     </Text>
 
                     {/* View que por tener flex de 1 ocupa todo el espacio que puede */}
-                    <View style={{ flex: 1 }} />
+                    <View style={{
+                         flex: 1,
+                    }} />
 
                     <Icon
                          name="chevron-forward-outline"
-                         color="#5856D6"
+                         color={colors.primary}
                          size={22}
                     />
 
